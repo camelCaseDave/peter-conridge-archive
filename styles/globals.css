@@ -2,34 +2,336 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "SilverSouth";
+  src: local("SilverSouth"), url(../fonts/SilverSouth.otf) format("opentype");
+}
+
 main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+.bar {
+  height: 92px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0 5rem 0;
+}
+
+.gallery-header.fancy {
+  padding: 1rem;
+  color: white;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.adventure {
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.adventure .fancy span {
+  font-size: 1rem;
+}
+.container-wrapper {
+  width: 1140px;
+  display: flex;
+  height: 100%;
+  margin: auto;
+}
+
+.journey {
+  font-size: 2rem;
+  display: table-cell;
+  vertical-align: middle;
+}
+.container-wrapper.bar {
+  height: 92px;
+}
+.container-wrapper.bar.fancy {
+  font-size: 2rem;
+  display: table;
+  width: 100%;
 }
 
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.dark,
+.content.dark {
+  color: rgb(152, 188, 192) !important;
+  background-color: rgb(49, 51, 62) !important;
+}
+
+.content.gallery-container {
+  height: fit-content;
+}
+
+.subtitle {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.subtitle.subtitle-upper {
+  padding-top: 5rem;
+}
+
+.subtitle.fancy {
+  font-size: 2rem;
+}
+
+.dark-text {
+  color: rgb(49, 51, 62) !important;
+}
+
+.header {
+  width: 100%;
+  height: 92px;
+  color: rgb(152, 188, 192);
+  background-color: white;
+}
+
+.content {
+  background-color: rgb(152, 188, 192);
+  height: 500px;
+  width: 100%;
+  display: flex;
+}
+
+.welcome {
+  display: flex;
+  height: 100%;
+  color: white;
+  width: 72%;
+  flex-direction: column;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  justify-content: center;
+}
+
+.welcome div {
+  display: flex;
+}
+
+.gallery-title {
+  height: 92px;
+  width: 100%;
+}
+
+.welcome-title {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.welcome-content span {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-hyphens: manual;
+  color: white;
+  display: flex;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 300;
+  height: 100%;
+  letter-spacing: 1.0199999809265137px;
+  padding-left: 1rem;
+  line-height: 2rem;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  margin-bottom: 0px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-top: 0px;
+  pointer-events: auto;
+  text-transform: none;
+  white-space: pre-wrap;
+  width: 680px;
+  word-wrap: break-word;
+}
+
+.book-container {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.button-link {
+  border: 8px solid rgb(5, 18, 23);
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: white;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.8rem 3.4rem 0.8rem 3.4rem;
+  margin-top: 3rem;
+  text-decoration-color: rgb(5, 18, 23);
+}
+
+.button-link:hover {
+  background-color: rgb(152, 188, 192);
+  border: 8px solid white;
+  color: white;
+}
+
+.button-link:hover strong {
+  color: white;
+}
+
+.chapter-download {
+  margin-top: 2.8rem;
+}
+
+.button-link span {
+  font-size: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  text-decoration: underline;
+}
+
+.button-link strong {
+  color: rgb(5, 18, 23);
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.background-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 0;
+  width: 100%;
+  display: flex;
+}
+
+.background-image div {
+  justify-content: center;
+}
+
+.avatar img {
+  height: 78%;
+  border: 6px solid white;
+  border-radius: 2px;
+  margin-left: 1rem;
+}
+
+strong {
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: rgb(152, 188, 192);
+  display: inline;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: bold;
+  height: auto;
+  letter-spacing: 4.070000171661377px;
+  line-height: 44.77000045776367px;
+  pointer-events: auto;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.fancy {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-hyphens: manual;
+  display: flex;
+  font-family: SilverSouth;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.800000011920929px;
+  line-height: 56px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  margin-bottom: 0px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  pointer-events: auto;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: pre-wrap;
+}
+
+.top-border {
+  border-top: 5px solid white;
+}
+
+.gallery {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+}
+
+.gallery-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-card-img {
+  display: flex;
+  border: 8px solid rgb(152, 188, 192);
+  border-radius: 2px;
+}
+.gallery-card-img img {
+  width: 300px;
+  height: auto;
+}
+.gallery-card-title {
+  padding-top: 0.8rem;
+  color: rgb(152, 188, 192);
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: SilverSouth;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: right;
+  width: 100%;
 }

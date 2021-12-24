@@ -1,3 +1,3 @@
-export default function Header({ title }) {
-  return <h1 className="title">{title}</h1>
+export default function Header(props) {
+  return <strong className={`header container bar ${props.dark ? 'dark-text' : ''}`} >{props.title}</strong>
 }

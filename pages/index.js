@@ -1,12 +1,14 @@
 import Head from "next/head";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Avatar from "@components/Avatar";
 import Button from "@components/Button";
 import Gallery from "@components/Gallery";
 import Welcome from "@components/Welcome";
 import landscape from "../public/wide-landscape.jpg";
 import BackgroundImage from "@components/BackgroundImage";
+import history from "../public/history.jpg";
+import adventure from "../public/adventure.JPG";
+import questionable from "../public/questionable.JPG";
 
 export default function Home() {
   return (
@@ -21,21 +23,30 @@ export default function Home() {
         <div className="content">
           <div className="container-wrapper">
             <Welcome />
-            <Avatar />
           </div>
         </div>
         <Header title={"The Meeting of the Waters"} dark />
-        <div className="subtitle subtitle-upper dark fancy">
-          ... a journey from the source of The River Exe to the sea
-        </div>
         <div className="content dark gallery-container">
           <div className="container-wrapper">
-            <Gallery />
+            <Gallery title={"History"} src={history.src} />
           </div>
+        </div>
+        <div className="content light gallery-container">
+          <div className="container-wrapper">
+            <Gallery title={"Culture"} src={questionable.src} />
+          </div>
+        </div>
+        <div className="content dark gallery-container gallery-bottom">
+          <div className="container-wrapper">
+            <Gallery title={"Adventure"} src={adventure.src} />
+          </div>
+        </div>
+        <div className="subtitle subtitle-upper dark fancy">
+          ... from the source of The River Exe to the sea
         </div>
         <div className="book-container">
           <BackgroundImage image={landscape}>
-            <div className="container-wrapper overlay top-border">
+            <div className="overlay top-border">
               <Button
                 className="chapter-download"
                 src="chapter-one.pdf"
@@ -44,10 +55,7 @@ export default function Home() {
             </div>
           </BackgroundImage>
         </div>
-        <div className="container-wrapper">
-          <Footer />
-        </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }

@@ -31,7 +31,12 @@ main {
 .gallery-container {
   display: flex;
   flex-direction: column;
-  padding: 4rem 0 5rem 0;
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.gallery-container.gallery-bottom {
+  padding-bottom: 0;
 }
 
 .gallery-header.fancy {
@@ -39,24 +44,24 @@ main {
   color: white;
   font-size: 2rem;
   width: 100%;
-  text-align: center;
   display: flex;
   justify-content: center;
 }
 
 .adventure {
   padding-top: 1rem;
-  text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   color: white;
 }
+
 .adventure .fancy span {
   font-size: 1rem;
 }
+
 .container-wrapper {
-  width: 1140px;
+  max-width: 1140px;
   display: flex;
   height: 100%;
   margin: auto;
@@ -67,9 +72,11 @@ main {
   display: table-cell;
   vertical-align: middle;
 }
+
 .container-wrapper.bar {
   height: 92px;
 }
+
 .container-wrapper.bar.fancy {
   font-size: 2rem;
   display: table;
@@ -89,6 +96,12 @@ main {
   background-color: rgb(49, 51, 62) !important;
 }
 
+.light,
+.content.light {
+  color: rgb(49, 51, 62) !important;
+  background-color: rgb(152, 188, 192) !important;
+}
+
 .content.gallery-container {
   height: fit-content;
 }
@@ -98,14 +111,11 @@ main {
   text-align: center;
   display: flex;
   justify-content: center;
-}
-
-.subtitle.subtitle-upper {
-  padding-top: 5rem;
+  padding: 2rem 1rem;
 }
 
 .subtitle.fancy {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .dark-text {
@@ -121,23 +131,18 @@ main {
 
 .content {
   background-color: rgb(152, 188, 192);
-  height: 500px;
   width: 100%;
   display: flex;
 }
 
 .welcome {
   display: flex;
-  height: 100%;
-  color: white;
-  width: 72%;
-  flex-direction: column;
-  padding: 1.5rem 0 1.5rem 1.5rem;
-  justify-content: center;
 }
 
-.welcome div {
+.welcome-content {
   display: flex;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 .gallery-title {
@@ -145,58 +150,28 @@ main {
   width: 100%;
 }
 
-.welcome-title {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.welcome-content span {
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-hyphens: manual;
-  color: white;
-  display: flex;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 300;
-  height: 100%;
-  letter-spacing: 1.0199999809265137px;
-  padding-left: 1rem;
-  line-height: 2rem;
-  margin-block-end: 0px;
-  margin-block-start: 0px;
-  margin-bottom: 0px;
-  margin-inline-end: 0px;
-  margin-inline-start: 0px;
-  margin-top: 0px;
-  pointer-events: auto;
-  text-transform: none;
-  white-space: pre-wrap;
-  width: 680px;
-  word-wrap: break-word;
-}
-
 .book-container {
   position: relative;
   display: flex;
-  height: 100%;
+  height: 20rem;
   width: 100%;
 }
 
 .button-link {
-  border: 8px solid rgb(5, 18, 23);
-  border-radius: 2px;
+  border: 0.2rem solid rgb(5, 18, 23);
+  border-radius: 0.2rem;
   cursor: pointer;
   background-color: white;
   height: fit-content;
   width: fit-content;
   padding: 0.8rem 3.4rem 0.8rem 3.4rem;
-  margin-top: 3rem;
   text-decoration-color: rgb(5, 18, 23);
+  margin-top: 2rem;
 }
 
 .button-link:hover {
   background-color: rgb(152, 188, 192);
-  border: 8px solid white;
+  border: 0.2rem solid white;
   color: white;
 }
 
@@ -230,15 +205,12 @@ main {
 
 .avatar {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  height: 100%;
+  padding: 0 15vw 0 15vw;
 }
 
 .background-image {
-  background-size: contain;
   background-repeat: no-repeat;
-  height: 0;
   width: 100%;
   display: flex;
 }
@@ -248,17 +220,29 @@ main {
 }
 
 .avatar img {
-  height: 78%;
-  border: 6px solid white;
-  border-radius: 2px;
-  margin-left: 1rem;
+  width: 100%;
+  border: 0.2rem solid white;
+  border-radius: 0.2rem;
+}
+
+.welcome-text,
+.welcome-text-inline {
+  color: white;
+  padding: 1vw 5vw 1vw 5vw;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.quote {
+  font-style: italic;
+  font-weight: 500;
 }
 
 strong {
   -webkit-font-smoothing: subpixel-antialiased;
   color: rgb(152, 188, 192);
   display: inline;
-  font-size: 37px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: bold;
   height: auto;
@@ -302,9 +286,9 @@ strong {
 
 .gallery {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: space-evenly;
-  padding-top: 0.5rem;
 }
 
 .gallery-card {
@@ -313,24 +297,34 @@ strong {
   display: flex;
   flex-direction: column;
 }
+
 .gallery-card-img {
   display: flex;
-  border: 8px solid rgb(152, 188, 192);
-  border-radius: 2px;
+  border: 0.2rem solid rgb(152, 188, 192);
+  border-radius: 0.2rem;
 }
+
+.light .gallery-card-img {
+  border: 0.2rem solid white; 
+}
+
 .gallery-card-img img {
   width: 300px;
   height: auto;
 }
+
 .gallery-card-title {
-  padding-top: 0.8rem;
-  color: rgb(152, 188, 192);
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.5rem;
   font-family: SilverSouth;
+  padding: 2rem 0 2rem 0;
+}
+
+.light .gallery-card-title {
+  color: white !important;
 }
 
 .footer {
+  display: flex;
   padding: 1rem;
   text-align: right;
   width: 100%;

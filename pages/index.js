@@ -50,7 +50,7 @@ export default function Home() {
               <Button
                 className="chapter-download"
                 src="chapter-one.pdf"
-                text="Explore Chapter One"
+                text="Click here to explore Chapter One"
               />
             </div>
           </BackgroundImage>
